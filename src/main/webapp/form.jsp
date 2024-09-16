@@ -14,7 +14,11 @@
         <img  src="./assets/img.png" />
     </div>
 
-    <form action="emailList" method="post">
+        <div>
+            ${error}
+        </div>
+
+    <form method="post" action="emailList">
         <h1>Survey</h1>
         <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
 
@@ -62,9 +66,9 @@
         </div>
 
         <h2>Would you like to receive announcements about new CDs and special offers?</h2>
-        <input type="checkbox" id="il" name="isLike" value="Bike">
+        <input type="checkbox" id="il" name="options" value="Like to receive announcements">
         <label for="il"> YES, I'd like that.</label><br>
-        <input type="checkbox" id="sen" name="isSendEmail" value="Bike">
+        <input type="checkbox" id="sen" name="options" value="Receive announcements via email">
         <label for="sen">YES, please send me email announcements.</label><br>
 
             <label for="contacts">Please contact me by:</label>

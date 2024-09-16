@@ -1,3 +1,4 @@
+<%@ page import="murach.models.User" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!doctype html>
 <html>
@@ -31,7 +32,26 @@
 <p>To enter another email address, click on the Back
     button in your browser or the Return button shown
     below.</p>
-
-<button onclick="history.back()">Go Back</button>
+<ul>
+    <%
+        User user = (User) request.getAttribute("user");
+        String[] selectedOptions = user.getSelectedOptions();
+        if (selectedOptions != null) {
+            for (String option : selectedOptions) {
+    %>
+    <li><input type="checkbox" checked="checked" value="<%= option %>"> <%= option %></li>
+    <%
+        }
+    } else {
+    %>
+    <li>No options selected.</li>
+    <%
+        }
+    %>
+</ul>
+<form action="" method="get">
+    <input hidden="hidden" name="action" value="back"/>
+    <button type="submit">Go back</button>
+</form>
 </body>
 </html>

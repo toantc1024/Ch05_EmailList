@@ -7,15 +7,14 @@ public class User implements Serializable {
     private String lastName;
     private String email;
     private String dateOfBirth;
-    private String isLike;
-    private String isSendEmail;
+    private String[] selectedOptions;
+
     private String hearUsOption;
 private String contactMeBy;
 
     public User() {
-        isLike = "";
-        isSendEmail = "";
        hearUsOption = "";
+       selectedOptions = new String[0];
         contactMeBy = "";
         firstName = "";
         lastName = "";
@@ -23,13 +22,12 @@ private String contactMeBy;
         dateOfBirth = "";
     }
 
-    public User(String firstName, String lastName, String email, String dateOfBirth, String isLike, String isSendEmail, String hearUsOption, String contactMeBy) {
+    public User(String firstName, String lastName, String email, String dateOfBirth, String[] selectedOptions, String hearUsOption, String contactMeBy) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
-        this.isLike = isLike;
-        this.isSendEmail = isSendEmail;
+        this.selectedOptions = selectedOptions;
         this.hearUsOption = hearUsOption;
         this.contactMeBy = contactMeBy;
     }
@@ -76,21 +74,6 @@ private String contactMeBy;
         this.hearUsOption = hearUsOption;
     }
 
-    public String getSendEmail() {
-        return isSendEmail;
-    }
-
-    public void setSendEmail(String sendEmail) {
-        isSendEmail = sendEmail;
-    }
-
-    public String getLike() {
-        return isLike;
-    }
-
-    public void setLike(String like) {
-        isLike = like;
-    }
 
     public String getContactMeBy() {
         return contactMeBy;
@@ -98,6 +81,14 @@ private String contactMeBy;
 
     public void setContactMeBy(String contactMeBy) {
         this.contactMeBy = contactMeBy;
+    }
+
+    public String[] getSelectedOptions() {
+        return selectedOptions;
+    }
+
+    public void setSelectedOptions(String[] selectedOptions) {
+        this.selectedOptions = selectedOptions;
     }
 }
 
